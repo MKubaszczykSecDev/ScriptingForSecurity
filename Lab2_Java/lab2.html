@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+<script language = "javascript">
+
+function calculateAnswer() {
+
+    var inputNum1;
+    var inputNum2;
+
+    inputNum1 = prompt('Enter the larger number: ', 0);
+    inputNum2 = prompt('Enter the smaller number: ', 0);
+    var outputTotal = inputNum1 - inputNum2;
+    alert('Answer is: ' + outputTotal);
+
+}
+
+</script>
+</head>
+
+<body>
+<form name = "myForm">
+    <h1><p> Subtracting Numbers</p>
+        <p>You will be asked for two Numbers</p>
+        <p>You will be shown the difference between the numbers</p></h1>
+
+<input type = "button" value = "start" onclick="calculateAnswer()";>
+</body>
+</html>
