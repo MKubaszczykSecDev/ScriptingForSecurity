@@ -109,6 +109,7 @@ SIG_HI        = 100 ;                # Critical files that are
 }
 
 (
+#------EDITED------------------------------
   rulename = "Boot Scripts",
   severity = $(SIG_HI)
 )
@@ -125,7 +126,7 @@ SIG_HI        = 100 ;                # Critical files that are
 	/etc/rc6.d		-> $(SEC_BIN) ;
 }
 
-
+#------------------------------------------
 #
 # Critical executables
 #
@@ -173,17 +174,21 @@ SIG_HI        = 100 ;                # Critical files that are
   severity = $(SIG_HI)
 )
 {
+#--------EDITED----------------------------------
+
 #	/var/lock		-> $(SEC_CONFIG) ;
 #	/var/run		-> $(SEC_CONFIG) ; # daemon PIDs
 	/var/log		-> $(SEC_CONFIG) ;
 }
-
+#------------------------------------------------
 # These files change the behavior of the root account
 (
   rulename = "Root config files",
   severity = 100
 )
 {
+
+#-----------------EDITED--------------------------
 	/root				-> $(SEC_CRIT) ; # Catch all additions to /root
 #	/root/mail			-> $(SEC_CONFIG) ;
 #	/root/Mail			-> $(SEC_CONFIG) ;
@@ -210,18 +215,21 @@ SIG_HI        = 100 ;                # Critical files that are
 #	/root/.Xauthority		-> $(SEC_CONFIG) -i ; # Changes Inode number on login
 #	/root/.ICEauthority		    -> $(SEC_CONFIG) ;
 }
-
+#-------------------------------------------------
 #
 # Critical devices
 #
+#---------EDITED-----------------------------------
 (
   rulename = "Devices & Kernel information",
   severity = $(SIG_HI),
 )
 {
 	/dev		-> $(Device) ;
-	/proc		-> $(Device) ;
+#	/proc		-> $(Device) ;
 }
+
+#--------------------------------------------------
 
 #
 # Other configuration files
